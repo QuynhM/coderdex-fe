@@ -41,16 +41,16 @@ export const getPokemonById = createAsyncThunk(
 );
 
 export const addPokemon = createAsyncThunk(
-  "pokemons/addPokemon",
-  async ({ name, id, imgUrl, types }, { rejectWithValue }) => {
-    try {
-      let url = "/pokemons";
-      await apiService.post(url, { name, id, url: imgUrl, types });
-      return;
-    } catch (error) {
-      return rejectWithValue(error);
+    'pokemons/addPokemon',
+    async ({ name, id, imgUrl, types }, { rejectWithValue }) => {
+        try {
+            let url = '/pokemons';
+            await apiService.post(url, { name, id, url: imgUrl, types });
+            return
+        } catch (error) {
+            return rejectWithValue(error)
+        }
     }
-  }
 );
 
 export const editPokemon = createAsyncThunk(
